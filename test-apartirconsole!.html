@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation de Nombre</title>
+</head>
+<body>
+
+    <script>
+       function nbRrandom (j) {
+        return Math.floor(Math.random() * (j+1))
+       }
+       const n = nbRrandom(10)*1
+       console.log(n)
+       function isRight (f){
+        return  n === f
+        
+       }
+
+       function guess() {
+        const g=prompt('donner une val')*1;
+        return isRight(g)
+      }
+       
+        for (let i=0;i<3;i++) {
+         if(guess()){console.log("braaavooooooooooo!!!!!!")
+          break;}
+        
+          else if (i===2) {
+            console.log("oups! dommaaage")   
+            break;
+        }
+       }
+    </script>
+</body>
+</html>
