@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation de Nombre premier/title>
+</head>
+<body>
+
+    <script>
+       function Premier (n) {
+        if (n<=1){return false}
+        else for (let i = n-1; i>1 ; i--){
+            if (n % i === 0) {return false}
+
+        }
+        return true;
+
+       }
+       console.log('0',Premier(0))
+       console.log('20',Premier(20))
+       console.log('07',Premier(7))
+       console.log('11',Premier(11))
+
+      
+    </script>
+</body>
+</html>
