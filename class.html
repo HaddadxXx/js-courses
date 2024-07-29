@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Student {
+
+
+notes = []
+
+constructor (firstname, lastname) {
+
+    this.firstname = firstname
+    this.lastname = lastname
+}
+
+
+addNote (note) {
+    this.notes.push(note)
+}
+
+
+get fullname () {
+    return `${this.firstname} ${this.lastname}`
+}
+
+get moyenne () {
+    let sum = 0
+    for (let note of this.notes) {
+        sum += note
+    }
+    return sum / this.notes.length
+}
+
+set name (str) {
+    const items = str.split(' ')
+    this.firstname = items[0]
+    this.lastname = items[1]
+}
+
+}
+const john = new Student('John', 'Doe') 
+john.notes 
+john.fullname 
+john.addNote(18)
+john.moyenne 
+john.name = 'Jane Doe'
+john.firstname = "Jane"
+
+</script>
+</html>
