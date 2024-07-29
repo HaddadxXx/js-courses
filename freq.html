@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const phrase = "Le soleil brille sur la mer calme. Les oiseaux chantent et les vagues se brisent doucement sur le rivage. Les enfants jouent sur la plage, construisant des châteaux de sable et riant joyeusement. Les parents les regardent avec tendresse, profitant de cette journée paisible."
+    const frequencies = {}
+    words = phrase
+         .toLowerCase()
+         .replaceAll(',','')
+         .replaceAll('!','')
+         .replaceAll(':','')
+         .replaceAll(';','')
+         .replaceAll('?','')
+         .replaceAll('.','')
+         .split(' ')
+
+for (let word of words) {
+    if (word !== ''){
+        if (frequencies[word]){
+            frequencies[word]++
+        }
+        else {
+            frequencies[word] = 1 
+        }
+
+    }
+}
+const frequenciesArray = []
+for (let k in frequencies) {
+    frequenciesArray.push({
+        word: k ,
+        count: frequencies[k]
+    })
+}
+frequenciesArray.sort((a, b) => b.count - a.count)
+console.log(frequenciesArray)
+console.log(`les mots les plus frequents sont : "${frequenciesArray[0].word}" (${frequenciesArray[0].count}) ,"${frequenciesArray[1].word}" (${frequenciesArray[1].count}),"${frequenciesArray[2].word}"(${frequenciesArray[2].count}) et"${frequenciesArray[3].word}" (${frequenciesArray[3].count}) `)
+</script>
+</html>
