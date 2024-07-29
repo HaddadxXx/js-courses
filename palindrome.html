@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+<body>
+
+    <script>
+       function isPalindrome (word) {
+       const letters =word.split('') 
+        console.log(letters)
+        letters.reverse()
+        const reverseWord = letters.join('')
+        console.log(letters)
+        return word.toUpperCase() === reverseWord.toUpperCase()
+       }
+       var wordsToTest = ['haddad', 'kayak', 'azza', 'aziza', 'madam'];
+
+for (let i = 0; i < wordsToTest.length; i++) {
+    let word = wordsToTest[i];
+    let result = isPalindrome(word);
+    console.log('Is "' + word + '" a palindrome? ' + result);
+}
+
+      
+    </script>
+</body>
+</html>

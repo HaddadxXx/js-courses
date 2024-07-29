@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moyyy</title>
+</head>
+<body>
+
+    <script>
+            const students = [
+            {
+                name: 'john',
+                notes: [9, 4.5, 20, 15, 8, 12]
+            },
+            {
+                name: 'alice',
+                notes: [10, 12, 14, 16, 18, 20]
+            },
+            {
+                name: 'bob',
+                notes: [5, 6, 7, 8, 9, 10]
+            },
+            {
+                name: 'carol',
+                notes: [12, 11, 13, 14, 15, 16]
+            }
+        ];
+     const moy = (notes) => {
+    let sum = 0
+    for (let note of notes){
+        sum= sum + note
+    }
+     return (sum / notes.length)
+     }
+     for ( let student of students){
+        student.moy = moy(student.notes)
+        student.worst = Math.min(...student.notes)
+        student.best = Math.max(...student.notes)
+        
+       /*
+        console.log("l'etudiant : " + student.name + " a un moy : "+ moy(student.notes))
+        */
+     }
+
+     const compareStudent = (a, b) => {
+        return (b.moy - a.moy)
+
+     }
+     students.sort(compareStudent)
+    /*console.log("Étudiants triés par moyenne:");
+     console.log(students)*/
+     const formatStudent = (student) => {
+         return`${student.name } avec une moyenne de  ${student.moy} sa meilleur note : ${student.best} et sa pire note : ${student.worst} ` ;
+     }
+     console.log (formatStudent(students[0]));
+     console.log (formatStudent(students[1]));
+     console.log (formatStudent(students[2]));
+
+    </script>
+</body>
+</html>
